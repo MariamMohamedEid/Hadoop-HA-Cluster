@@ -18,17 +18,8 @@ This project sets up a High Availability Hadoop cluster using Docker and ZooKeep
 
 ## 🗂 Directory Structure
 
-.
-├── core-site.xml
-├── hdfs-site.xml
-├── yarn-site.xml
-├── mapred-site.xml
-├── hadoop-env.sh
-├── zoo.cfg
-├── entrypoint.sh
-├── docker-compose.yaml
-├── Dockerfile
-└── README.md
+![image](https://github.com/user-attachments/assets/fc42dc5f-0e3d-42bd-8e14-52341a794d36)
+
 
 ---
 
