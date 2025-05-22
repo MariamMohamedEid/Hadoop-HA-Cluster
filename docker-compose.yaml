@@ -1,0 +1,73 @@
+services:
+ hmaster1:
+  build: 
+   context: .
+  hostname: hmaster1
+  container_name: hmaster1
+  volumes:
+    - journal1:/usr/local/hadoop/journal/data
+    - namenode1:/usr/local/hadoop/namenode
+    - zookeeper1:/usr/local/zookeeper/data
+  ports:
+   - "9878:9870"
+   - "8082:8088"
+  networks:
+    - mynetwork
+
+ 
+ hmaster2:
+  build: 
+   context: .
+  hostname: hmaster2
+  container_name: hmaster2
+  volumes:
+    - journal2:/usr/local/hadoop/journal/data
+    - namenode2:/usr/local/hadoop/namenode
+    - zookeeper2:/usr/local/zookeeper/data
+  ports:
+   - "9874:9870"
+   - "8084:8088"
+  networks:
+    - mynetwork   
+ 
+ 
+ hmaster3:
+  build: 
+   context: .
+  hostname: hmaster3
+  container_name: hmaster3
+  volumes:
+    - journal3:/usr/local/hadoop/journal/data
+    - namenode3:/usr/local/hadoop/namenode
+    - zookeeper3:/usr/local/zookeeper/data
+  ports:
+   - "9873:9870"
+   - "8085:8088"
+  networks:
+    - mynetwork
+
+ hworker:
+  build: 
+   context: .
+  hostname: hworker
+  container_name: hworker
+  volumes:
+    - datanode1:/usr/local/hadoop/datanode
+  networks:
+    - mynetwork
+
+networks:
+  mynetwork:
+    external: true
+    #driver: bridge
+volumes:
+  journal1:
+  namenode1:
+  zookeeper1:
+  journal2:
+  namenode2:
+  zookeeper2:
+  journal3:
+  namenode3:
+  zookeeper3:
+  datanode1:
