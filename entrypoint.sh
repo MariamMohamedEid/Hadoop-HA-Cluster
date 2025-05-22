@@ -52,10 +52,4 @@ else
 fi
 
 
-
-
-# # Start Zookeeper
-# echo "Starting Zookeeper..."
-# /usr/local/zookeeper/bin/zkServer.sh start
-
 sleep infinity
